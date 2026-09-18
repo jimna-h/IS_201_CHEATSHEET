@@ -1,1 +1,115 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"></head><body><div></div><table><tr><td>Slide</td><td>Topic</td></tr><tr><td>1</td><td>ERDs</td></tr><tr><td>7</td><td>SQL</td></tr><tr><td>9</td><td>Flow Charts</td></tr><tr><td>10</td><td>VBA</td></tr><tr><td>16</td><td>Statistics</td></tr><tr><td>17</td><td>Tableau</td></tr><tr><td>18</td><td>Solver</td></tr><tr><td>19</td><td>HTML</td></tr><tr><td>28</td><td>CSS</td></tr></table><div></div><div></div><p>Read <span style="text-decoration: underline">left-to-right</span> AND <span style="text-decoration: underline">right-to-left</span></p><p><strong>One to One (1:1)</strong><br><span style="display: inline-block">A store has one manager</span><span style="white-space: pre-wrap">&#x20;&#x20;&#x20;</span><span style="display: inline-block">A manager works at one store</span></p><p><strong>One to Many (1:N)</strong><br><span style="display: inline-block">A customer can have multiple orders</span><span style="white-space: pre-wrap">&#x20;&#x20;&#x20;</span><span style="display: inline-block">An order belongs to one customer</span></p><p><strong>Many to Many (M:N)</strong><br><span style="display: inline-block">A student can enroll in many courses</span><span style="white-space: pre-wrap">&#x20;&#x20;&#x20;</span><span style="display: inline-block">A course can have lots of students</span></p><p>Note! M:N cardinality requires a composite table (next slide)</p><div></div><div></div><p>The <span style="display: inline-block">inner</span> ones are <strong>minimum</strong> (0 or 1)<br>and the <span style="display: inline-block">outer</span> ones are <strong>maximum</strong> (1 or many)</p><table><thead><tr><th><strong>Table A</strong></th><th><strong>Table B</strong></th></tr></thead><tbody><tr><td>1 B or many B</td><td>1 A or 1 A</td></tr><tr><td>0 B or many B</td><td>1 A or many A</td></tr><tr><td>1 B or 1 B</td><td>0 A or 1 A</td></tr><tr><td>0 B or 1 B</td><td>0 A or many A</td></tr></tbody></table><p>Think: a student could have 0 cars, but they could also have multiple.</p><div></div><div></div><div></div><p>ta_name <strong>=</strong> “James”→ Exact match</p><p>ta_name <strong>!=</strong> “James”→ Not exact match<br>ta_name <strong>&lt;></strong> “James”(these are equivalent)</p><p>ta_name <strong>IS</strong> NULL→ NULL means blank data (can also do <strong>IS NOT</strong> NULL)</p><p>ta_name <strong>LIKE</strong> ‘%ame%’→ The text (“ame”) is contained within the attribute<br>(% = wildcard)</p><p>ta_name <strong>IN</strong> (“James”, “Robert”, “Frankie”)<br>→ Exact match for <span style="text-decoration: underline">any</span> of these</p><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><ul><li>“Default” settings are usually a good starting point — check them first</li><li>Switching the x- and y-axis can reveal a clearer story</li><li>Watch your sort/ordering — Tableau doesn’t always order the way you expect</li></ul><div></div><p><strong>Two important Excel formulas:</strong></p><div></div><ul><li><strong>Constraints:</strong> set a changing-cell reference, an operator (<code>&lt;=</code>, <code>=</code>, <code>>=</code>), and the constraint value</li><li><strong>If integer constraints aren’t working:</strong> Solver → Options → uncheck “Ignore Integer Constraints” and set Integer Optimality to 1%</li></ul><div></div><p>In VS Code, inside a <code>.html</code> file, type <code>!</code> then Enter to generate:</p><div></div><p>startbootstrap.com/themes/portfolio-resume</p><div></div><div></div><p>The start and end tags act like parentheses: <code>&lt;tag> stuff &lt;/tag></code></p><div></div><div></div><p><code>../</code> means go to the parent folder (or <em>root directory</em>)</p><div></div><div></div><p>Notice: images do NOT have an end tag <code>&lt;/img></code> (neither do line breaks <code>&lt;/br></code>)</p><div></div><p>Divs don’t inherently do anything — they’re invisible boxes you put content into so you can isolate it for positioning and CSS styling using classes.</p><p>For more, see: <strong>CSS: Selectors/Properties/Values</strong></p><div></div><p>Sometimes doesn’t work until you go live</p><div></div><p><strong>Use folders!</strong> Keep <code>css/</code>, <code>html/</code>, <code>images/</code>, and <code>js/</code> separate, with <code>index.html</code> at the project root.</p><p>To quickly format everything correctly (tabs, long lines, etc.) in VS Code:<br><span style="display: inline-block">Right click → Format Document</span></p><div></div><ol><li>Click <strong>New</strong> to create a repository</li><li>Click <strong>Create repository</strong></li><li>On the repo page: <strong>Add file → Upload files</strong></li><li>Click <strong>Commit changes</strong></li></ol><p>Upload the CONTENTS of your folder, not the folder itself</p><div></div><ol><li>Go to <strong>Settings</strong></li><li>Click <strong>Pages</strong> in the sidebar</li><li>Under Branch, select <code>main</code> (instead of <code>None</code>) and <strong>Save</strong></li></ol><p>After a couple of minutes, refresh the page — there will be a link to your website at the top.</p><div></div><div></div><div></div><p>CSS is <strong>cascading</strong> because more recent styling supersedes previous styling — if you set the font color to blue, then later set it to red, it will be red.</p><div></div><div></div><div></div><p>There are A LOT of selectors and properties — Google and AI are your friend for finding exactly what you want!</p></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>James' Super Cool IS 201 Cheat Sheet</title>
+<style>
+  :root {
+    --primary: #3d6b78;
+    --bg: #f7f7f5;
+    --card: #ffffff;
+    --text: #1f1f1f;
+    --muted: #6b6b6b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2.5rem 1.25rem 3rem;
+  }
+  h1 {
+    font-size: 1.6rem;
+    text-align: center;
+    margin: 0 0 0.25rem;
+  }
+  p.subtitle {
+    color: var(--muted);
+    margin: 0 0 1.75rem;
+    text-align: center;
+    font-size: 0.95rem;
+  }
+  .actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  a.button {
+    display: inline-block;
+    padding: 0.65rem 1.4rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: system-ui, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: 1.5px solid var(--primary);
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  a.button.primary {
+    background: var(--primary);
+    color: white;
+  }
+  a.button.primary:hover { background: #2f545e; }
+  a.button.secondary {
+    background: transparent;
+    color: var(--primary);
+  }
+  a.button.secondary:hover { background: #eef3f3; }
+  .viewer {
+    width: 100%;
+    max-width: 960px;
+    aspect-ratio: 16 / 9;
+    background: var(--card);
+    border-radius: 10px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    overflow: hidden;
+    border: 1px solid #e3e3e0;
+  }
+  .viewer iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  .fallback {
+    display: none;
+    padding: 2rem;
+    text-align: center;
+    color: var(--muted);
+    font-family: system-ui, sans-serif;
+    font-size: 0.9rem;
+  }
+  footer {
+    margin-top: 2rem;
+    font-family: system-ui, sans-serif;
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+  footer a { color: var(--primary); }
+</style>
+</head>
+<body>
+  <h1>James&rsquo; Super Cool IS 201 Cheat Sheet</h1>
+  <p class="subtitle">ERDs &middot; SQL &middot; VBA &middot; Statistics &middot; HTML/CSS &middot; and more</p>
+
+  <div class="actions">
+    <a class="button primary" href="is201-cheatsheet.pdf" download>Download PDF</a>
+    <a class="button secondary" href="is201-cheatsheet.pdf" target="_blank" rel="noopener">Open in New Tab</a>
+  </div>
+
+  <div class="viewer">
+    <iframe src="is201-cheatsheet.pdf" title="IS 201 Cheat Sheet PDF"></iframe>
+  </div>
+
+  <footer>
+    Source in <a href="https://github.com/jimna-h/IS_201_CHEATSHEET" target="_blank" rel="noopener">this repository</a>
+  </footer>
+</body>
+</html>
